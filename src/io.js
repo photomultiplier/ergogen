@@ -22,7 +22,7 @@ const fake_require = exports.fake_require = injection => name => {
 exports.unpack = async (zip) => {
 
     // main config text (has to be called "config.ext" where ext is one of yaml/json/js)
-    const candidates = zip.file(/^config\.(yaml|json|js)$/)
+    const candidates = zip.file(/^config\.(ya?ml|json|js)$/)
     if (candidates.length != 1) {
         throw new Error('Ambiguous config in bundle!')
     }
